@@ -4,7 +4,6 @@ variable "namespaces" {
   default     = "dotpay-staging"
 }
 
-# create all Namespaces into EKS
 resource "kubernetes_namespace" "eks_namespaces" {
   for_each = toset(var.namespaces)
 
@@ -14,3 +13,4 @@ resource "kubernetes_namespace" "eks_namespaces" {
     }
     name = each.key
   }
+}
