@@ -1,11 +1,12 @@
 terraform {
   required_version = ">= 0.13"
 
-required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">=3.20.0"
+  required_providers {
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">= 1.7.0"
     }
+  }
 
     random = {
       source  = "hashicorp/random"
