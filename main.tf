@@ -6,7 +6,8 @@ terraform {
       key            = "s3/terraform.tfstate"
       region         = "us-west-1"
 
-      dynamodb_table = "dotpaydB"
+      dynamodb_table = "dotpay"
+      encrypt        = true
     
    }
 
