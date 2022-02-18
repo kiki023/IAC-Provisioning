@@ -16,7 +16,7 @@ terraform {
     write_capacity = 20
     hash_key = "LockID"
 
-  attribute {
+    attribute {
       name = "LockID"
       type = "S"
    }
