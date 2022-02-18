@@ -13,7 +13,11 @@ provider "kubernetes" {
 
 # Using these data sources allows the configuration to be
 # generic for any region.
-data "aws_region" "current" {}
+#data "aws_region" "current" {}
+provider "aws" {
+   region  = "us-west-1"
+   
+ }
 
 # data "aws_availability_zones" "available" {}
 
