@@ -8,16 +8,11 @@ terraform {
     }
   }
 
-  cloud {
-    organization = "LoveChi"
-
-    workspaces {
-      name = "gh-actions-dotpay"
-    }
-  }
-}
-
-provider "aws" {
+ provider "aws" {
         region = "us-west-1"
         shared_credentials_file = "~/eksadmin/.aws/credentials"
+}
+ backend "s3" {}
+
+   required_version = "~> 0.14"
 }
