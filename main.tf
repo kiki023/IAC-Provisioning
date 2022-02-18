@@ -40,5 +40,8 @@ terraform {
     region               = "us-west-1"
     key                  = "terraform.tfstate"
     dynamodb_table       = "dotpaydb" 
+  
+  required_version = "~> 0.14"   
+ 
   }
 }
