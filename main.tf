@@ -27,7 +27,7 @@ terraform {
       source  = "hashicorp/template"
       version = ">=2.0.1"
     }
-  }
+  
 
   backend "s3" {
     bucket               = "dotpaystaging"
