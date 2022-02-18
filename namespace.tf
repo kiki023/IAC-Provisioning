@@ -1,6 +1,7 @@
 variable "namespaces" {
   type        = list(string)
   description = "List of namespaces to be created in our EKS Cluster."
+  default     = dotpay-staging
 }
 
 # create all Namespaces into EKS
@@ -13,4 +14,3 @@ resource "kubernetes_namespace" "eks_namespaces" {
     }
     name = each.key
   }
-}
