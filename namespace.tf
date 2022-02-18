@@ -1,7 +1,7 @@
 variable "namespaces" {
   type        = list(string)
   description = "List of namespaces to be created in our EKS Cluster."
-  default     = dotpay-staging
+  default     = "dotpay-staging"
 }
 
 # create all Namespaces into EKS
