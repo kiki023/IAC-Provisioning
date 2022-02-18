@@ -35,13 +35,14 @@ terraform {
     }
   
 
-  backend "s3" {
-    bucket               = "dotpaystaging"
-    region               = "us-west-1"
-    key                  = "terraform.tfstate"
-    dynamodb_table       = "dotpaydb" 
+    backend "s3" {
+      bucket               = "dotpaystaging"
+      region               = "us-west-1"
+      key                  = "terraform.tfstate"
+      dynamodb_table       = "dotpaydb" 
   
-  required_version = "~> 0.14"   
+    
  
+    }
   }
 }
