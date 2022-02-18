@@ -15,9 +15,4 @@ variable "eks_node_instance_type" {
 }
 
 
-# deployment sub_domain
-# deployments_subdomains = ["sample"]
-
-# namespace
-namespaces = "dotpay-staging"
 
