@@ -24,5 +24,5 @@ dynamodb_table       = "dotpaydb"
 # deployments_subdomains = ["sample"]
 
 # namespace
-namespaces = ["dotpay-dev"]
+namespaces = ["dotpay-staging"]
 
