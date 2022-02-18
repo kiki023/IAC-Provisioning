@@ -10,7 +10,7 @@ provider "kubernetes" {
 # provider "aws" {
 #  region  = "us-west-1"
 
-# data "aws_availability_zones" "available" {}
+ data "aws_availability_zones" "available" {}
 
 # Not required: currently used in conjuction with using
 # icanhazip.com to determine local workstation external IP
