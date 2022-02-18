@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
      bucket               = "dotpaystaging"
       region              = "us-west-1"
-      key                 = "terraform.tfstate"
+      key                 = "terraform/terraform.tfstate"
       dynamodb_table      = "dotpaydb" 
 
  }
