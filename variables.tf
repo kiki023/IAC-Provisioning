@@ -1,5 +1,5 @@
 # Variables Configuration
-#
+
 
 variable "cluster-name" {
   default = "dotpay-staging-demo"
