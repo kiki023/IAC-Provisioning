@@ -1,4 +1,4 @@
-terraform }
+terraform {
   backend "s3" {
     
       bucket         = "dotpaystaging"
@@ -21,6 +21,6 @@ terraform }
   attribute {
       name = "LockID"
       type = "S"
+    }
   }
-
 }
