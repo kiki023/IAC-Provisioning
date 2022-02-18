@@ -101,12 +101,11 @@ resource "aws_eks_node_group" "demo" {
   remote_access{
       ec2_ssh_key = var.key_pair_name
   }
-}
 
 
   scaling_config {
     desired_size = 2
-    max_size     = 200
+    max_size     = 4
     min_size     = 2
   }
 
