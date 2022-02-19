@@ -1,5 +1,5 @@
 
-resource "aws_iam_role" "demo-node2" {
+resource "aws_iam_role" "demo-node" {
   name = "terraform-eks-demo-node"
 
   assume_role_policy = <<POLICY
