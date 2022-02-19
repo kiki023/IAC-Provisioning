@@ -37,7 +37,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Terraform Plan
-      run: terraform plan 
+      run: terraform plan -lock=false
       env:
         #GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         #TF_ACTION_WORKING_DIR: 'terraform'
@@ -46,7 +46,7 @@ jobs:
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform apply -auto-approve  
+      run: terraform apply -auto-approve  -lock=false
       env:
         #GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
         #TF_ACTION_WORKING_DIR: 'terraform'
