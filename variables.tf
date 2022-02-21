@@ -7,7 +7,7 @@ variable "cluster-name" {
 }
 
 variable "key_pair_name" {
-  default = "2022"
+  default = "poy"
 }
 
 variable "eks_node_instance_type" {
