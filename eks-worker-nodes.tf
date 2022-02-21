@@ -60,16 +60,16 @@ data "aws_iam_policy_document" "worker_autoscaling" {
   }
 }
 
-#resource "aws_iam_role_policy_attachment" "workers_autoscaling" {
- # policy_arn = aws_iam_policy.worker_autoscaling.arn
- # role       = aws_iam_role.demo-node.name
-#}
+resource "aws_iam_role_policy_attachment" "workers_autoscaling" {
+  policy_arn = aws_iam_policy.worker_autoscaling.arn
+  role       = aws_iam_role.demo-node.name
+}
 
-#resource "aws_iam_policy" "worker_autoscaling" {
- # name_prefix = "eks-worker-autoscaling-${aws_eks_cluster.demo.id}"
- # description = "EKS worker node autoscaling policy for cluster ${aws_eks_cluster.demo.id}"
- # policy      = data.aws_iam_policy_document.worker_autoscaling.json
-#}
+resource "aws_iam_policy" "worker_autoscaling" {
+  name_prefix = "eks-worker-autoscaling-${aws_eks_cluster.demo.id}"
+  description = "EKS worker node autoscaling policy for cluster ${aws_eks_cluster.demo.id}"
+  policy      = data.aws_iam_policy_document.worker_autoscaling.json
+}
 
 
 
@@ -105,10 +105,10 @@ resource "aws_eks_node_group" "demo" {
     min_size     = 2
   }
 
-  #depends_on = [
-   # aws_iam_role_policy_attachment.workers_autoscaling,
-   # aws_iam_role_policy_attachment.demo-node-AmazonEKSWorkerNodePolicy,
-   # aws_iam_role_policy_attachment.demo-node-AmazonEKS_CNI_Policy,
-   # aws_iam_role_policy_attachment.demo-node-AmazonEC2ContainerRegistryReadOnly,
- # ]
+  depends_on = [
+    aws_iam_role_policy_attachment.workers_autoscaling,
+    aws_iam_role_policy_attachment.demo-node-AmazonEKSWorkerNodePolicy,
+    aws_iam_role_policy_attachment.demo-node-AmazonEKS_CNI_Policy,
+    aws_iam_role_policy_attachment.demo-node-AmazonEC2ContainerRegistryReadOnly,
+  ]
 }
